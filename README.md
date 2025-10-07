@@ -5,6 +5,12 @@
 
 ---
 
+##  Deploy Links
+
+- **Main page:** [https://lab1-backend-iau1.onrender.com/](https://lab1-backend-iau1.onrender.com/)
+- **Healthcheck:** [https://lab1-backend-iau1.onrender.com/healthcheck](https://lab1-backend-iau1.onrender.com/healthcheck)
+- **Hello:** [https://lab1-backend-iau1.onrender.com/hello](https://lab1-backend-iau1.onrender.com/hello)
+
 ## Структура
 ```
 app/
