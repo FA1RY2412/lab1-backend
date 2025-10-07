@@ -8,4 +8,5 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Render provides $PORT; locally docker-compose will pass it too
-CMD flask --app app run -h 0.0.0.0 -p $PORT
+CMD ["flask", "--app", "app", "run", "-h", "0.0.0.0", "-p", "$PORT"]
+
