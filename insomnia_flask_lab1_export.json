@@ -1,0 +1,22 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-10-07T00:00:00.000Z",
+  "__export_source": "chatgpt",
+  "resources": [
+    {
+      "_id": "wrk_flask_lab1",
+      "_type": "workspace",
+      "name": "Flask Lab1",
+      "parentId": null
+    },
+    {
+      "_id": "req_healthcheck",
+      "_type": "request",
+      "parentId": "wrk_flask_lab1",
+      "name": "GET /healthcheck (local)",
+      "method": "GET",
+      "url": "http://localhost:8080/healthcheck"
+    }
+  ]
+}
