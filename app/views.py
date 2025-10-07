@@ -1,16 +1,14 @@
-from flask import jsonify
-from datetime import datetime, timezone
 from app import app
+from flask import jsonify
+from datetime import datetime
 
-@app.route('/healthcheck', methods=['GET'])
+@app.route('/')
+def index():
+    return jsonify({"message": "Welcome to Flask Lab1. See /healthcheck"})
+
+@app.route('/healthcheck')
 def healthcheck():
     return jsonify({
         "status": "OK",
-        "date": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S %Z")
-    }), 200
-
-@app.route('/', methods=['GET'])
-def root():
-    return jsonify({
-        "message": "Welcome to Flask Lab1. See /healthcheck"
-    }), 200
+        "date": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    })
