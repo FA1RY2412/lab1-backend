@@ -1,12 +1,22 @@
+
 FROM python:3.11.3-slim-bullseye
 
+
 WORKDIR /app
+
 
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
+
+ARG REBUILD=5
+
+
 COPY . /app
 
-# Render provides $PORT; locally docker-compose will pass it too
-CMD ["flask", "--app", "app", "run", "-h", "0.0.0.0", "-p", "$PORT"]
 
+ENV FLASK_APP=app
+ENV FLASK_ENV=production
+
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port", "$PORT"]
