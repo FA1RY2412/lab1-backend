@@ -12,4 +12,7 @@ def healthcheck():
         "status": "OK",
         "date": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
     })
-
+    
+@app.get("/hello")
+def hello():
+    return jsonify({"message": "Hello from Flask Lab1!"})
