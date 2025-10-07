@@ -6,7 +6,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
+ARG REBUILD=9
+
 COPY . .
 
 
-CMD sh -c 'flask --app app.py run --host=0.0.0.0 --port ${PORT:-8080}'
+CMD ["python", "app.py"]
