@@ -15,4 +15,6 @@ COPY . .
 
 
 ENV PORT=8080
-CMD sh -c 'exec gunicorn -w 2 -b 0.0.0.0:${PORT} app:app'
+CMD sh -c 'exec gunicorn -w 2 -b 0.0.0.0:${PORT} \
+  --access-logfile - --error-logfile - --log-level info app:app'
+
