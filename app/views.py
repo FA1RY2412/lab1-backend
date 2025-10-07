@@ -12,3 +12,6 @@ def healthcheck():
         "status": "OK",
         "date": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
     })
+@app.get("/_routes")
+def list_routes():
+    return jsonify(sorted([str(r) for r in app.url_map.iter_rules()]))
